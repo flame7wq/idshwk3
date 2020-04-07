@@ -15,7 +15,7 @@ event http_header(c: connection, is_orig: bool, name: string, value: string)
     }       
 }
 
-event zeek_init()
+event zeek_done()
 {
     for ( k in p)
         if (|p[k]|>=3)
