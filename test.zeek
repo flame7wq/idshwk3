@@ -2,8 +2,8 @@ global p:table[addr] of set[string]={};
 
 event http_header(c: connection, is_orig: bool, name: string, value: string)
 {   
-	local ip_src=c$http$id$orig_h;
-	local u_agent=c$http$user_agent;
+    local ip_src=c$http$id$orig_h;
+    local u_agent=c$http$user_agent;
 	
     if ( ip_src !in p)
     {
@@ -12,7 +12,7 @@ event http_header(c: connection, is_orig: bool, name: string, value: string)
     else
     {	
     	for(k in p)
-        	if (u_agent !in p[k])
+            if (u_agent !in p[k])
             	add p[k][to_lower(u_agent)];
     }       
 }
