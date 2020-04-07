@@ -11,9 +11,7 @@ event http_header(c: connection, is_orig: bool, name: string, value: string)
     }
     else
     {	
-    	for(k in p)
-            if (u_agent !in p[k])
-            	add p[k][to_lower(u_agent)];
+    	add p[ip_src][to_lower(u_agent)];
     }       
 }
 
